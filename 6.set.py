@@ -71,4 +71,3 @@ intersect_users = users & new_users
 diff_users = users - new_users
 
 print(union_users)
-
