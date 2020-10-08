@@ -61,6 +61,74 @@ my_tuple = (100, 200, 300)
 # 		break
 # 	print(n)
 
-for idx in range(5, 20, 2):
-	res = idx + 1
-	print(res)
+# for idx in range(5, 20, 2):
+# 	res = idx + 1
+# 	print(res)
+
+
+# *** Генераторы списков ***
+
+# Создание списка с числами в диапозоне от 0 до 9
+# my_list = [num for num in range (10)]
+
+# Создание списка с числами в диапозоне от 50 до 90
+# my_list = [num for num in range (50, 100, 10)]
+
+# Создание списка с числами в диапозоне от 0 до 9 с возведением в степень 2
+# my_list = [num ** 2 for num in range (10)]
+
+# Создание списка с числами в диапозоне от 0 до 9 которые больше 5
+# my_list = [num for num in range(10) if num >5]
+
+
+# *** Генератор словаря ***
+
+# *** Создание словаря из списка символов ***
+my_dict = {symbol : symbol for symbol in ["a", "b", "c"]}
+
+# *** Создание словаря из списка символов ***
+list_1 =[('a', 10), ('b', 20), ('c', 30)]
+
+my_dict = {key : val for key, val in list_1}
+
+
+
+# *** Практическое использование циклов ***
+
+# *** Калькулятор ***
+
+commands = {"stop", "+", "-", "*", "/"}
+
+while True:
+
+	# Ввод чисел
+	num_list =[]
+	for i in range(2):
+		num = int(input(f"Введите {i+1} число: "))
+		num_list.append(num)
+
+	# Ввод команды
+	cmd = None
+	while True:
+		cmd = input("Введите команду: ")
+		if cmd not in commands:
+			print("Вы ввели неправильную команду!!! ") 
+			continue
+		else:
+			break
+	
+	# Вычисление
+	if cmd == 'stop':
+		print("До свидание")
+		break
+	elif cmd == "+":
+		res = num_list[0] + num_list[1]
+	elif cmd == "-":
+		res = num_list[0] - num_list[1]
+	elif cmd == "*":
+		res = num_list[0] * num_list[1]
+	elif cmd == "/":
+		res = num_list[0] / num_list[1]
+	
+	# Вывод результатов
+	print(f"Результат: {res}")
